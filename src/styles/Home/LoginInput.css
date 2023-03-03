@@ -1,0 +1,43 @@
+
+.Home-LoginInput-container {
+    font-size: 2.5rem;
+}
+.Home-LoginInput-container > p {
+    font-size: 0.8rem;
+    position: relative;
+    top: 1.4rem;
+    left: 0.2rem;
+    background-color: var(--first-color);
+    display: block;
+    width: fit-content;
+    padding: 0.1rem 0.4rem;
+    border-radius: 3rem;
+}
+
+.Home-Login-buttons-container {
+    gap: 0.5rem;
+    margin-bottom: 2rem;
+}
+.Home-Login-buttons-container > button {
+    background-color: var(--first-color);
+    color: var(--second-color);
+    border: 0;
+    font-size: 1rem;
+}
+.Home-Login-buttons-container > button:hover {
+    text-decoration: underline;
+    cursor: pointer;
+    color: var(--third-color);
+}
+
+
+@media (max-width: 768px) {
+    .Home-LoginInput-container {
+        width: 100%;
+
+    }
+    .Home-LoginInput-container > input {
+        width: 95%;
+    }
+}
+

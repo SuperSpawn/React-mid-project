@@ -1,0 +1,12 @@
+
+:root {
+    --first-color: #191825;
+    --second-color: #865DFF;
+    --third-color: #E384FF;
+    --fourth-color: #FFA3FD;
+}
+
+.page-height {
+    height: fit-content;
+    min-height: 100vh;
+}
