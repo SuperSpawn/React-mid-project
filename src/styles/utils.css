@@ -11,7 +11,24 @@
     min-height: 100vh;
 }
 
-
+.Loading-container {
+    display: block;
+    width: 100%;
+    background-color: var(--first-color);
+    color: var(--second-color);
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
+.Loading-container > .spinner {
+    display: block;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    border: 0.3rem solid var(--second-color);
+    border-top-color: var(--third-color);
+    animation: spin 1s ease-in-out infinite;
+}
 
 @keyframes color-switch {
     0% {
@@ -23,4 +40,9 @@
     100% {
         color: var(--third-color);
     }
+}
+
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
 }
