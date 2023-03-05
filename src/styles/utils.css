@@ -10,3 +10,17 @@
     height: fit-content;
     min-height: 100vh;
 }
+
+
+
+@keyframes color-switch {
+    0% {
+        color: var(--third-color);
+    }
+    50% {
+        color: var(--fourth-color);
+    }
+    100% {
+        color: var(--third-color);
+    }
+}

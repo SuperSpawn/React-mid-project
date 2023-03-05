@@ -11,7 +11,7 @@ export const Login = () => {
   const passwordRef = useRef(null);
 
   const validateLogin = () => {
-
+    //TODO: validate login information
   }
 
   return (

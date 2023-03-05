@@ -1,0 +1,13 @@
+.NoPage-container {
+    background-color: var(--first-color);
+    color: var(--second-color);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+.NoPage-container > h1 {
+    font-size: 6rem;
+    animation: color-switch 2s linear infinite;
+}

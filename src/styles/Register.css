@@ -1,3 +1,10 @@
 .Register-container {
     background-color: var(--first-color);
+    color: var(--second-color);
 }
+.Register-input-container {
+    width: 90%;
+    margin: auto;
+    max-width: 30rem;
+}
+
