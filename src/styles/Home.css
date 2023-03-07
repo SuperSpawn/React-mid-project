@@ -10,7 +10,7 @@
     background-color: var(--first-color);
     color: var(--second-color);
     padding: 0.5rem 2rem;
-    font-size: 1.7rem;
+    font-size: 3rem;
     border: 0;
 }
 .Home-navbar-buttons-container > button:hover {
