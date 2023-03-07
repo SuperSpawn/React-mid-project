@@ -1,8 +1,8 @@
 .Home-About-container {
     color: var(--second-color);
-    font-size: 2rem;
+    font-size: 4rem;
 }
 .Home-About-container span {
-    font-size: 1.3rem;
+    font-size: 3rem;
     color: var(--third-color);
 }
