@@ -44,6 +44,9 @@
         width: 100%;
 
     }
+    .Home-LoginInput-container > p {
+        top: 3rem;
+    }
     .Home-LoginInput-container > input {
         width: 95%;
     }
