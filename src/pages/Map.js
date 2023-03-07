@@ -11,12 +11,10 @@ import fetchUsers from "../service/fetchUsers";
 import { NoPage } from "./NoPage";
 
 export const Map = () => {
-  //load locations array
   const user = JSON.parse(localStorage.getItem("user"));
 
   const users = fetchUsers();
   if (!users) return <NoPage />;
-
   const locations = users[0].gang;
 
   return (

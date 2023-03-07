@@ -1,10 +1,16 @@
-const MapLocation = ({ name, locationType }) => {
+import "../styles/reset.css";
+import "../styles/utils.css";
+import "../styles/MapLocation.css";
+
+const MapLocation = ({ location, locationType }) => {
   return (
-    <div className="MapCard-container">
-      <p>{name}</p>
+    <div className="MapLocation-container">
+      <p>{location.name}</p>
       <img src={`/assets/${locationType}.jpg`} alt="hi" />
-      <button>Enter location</button>
-      <button>Fight monsters</button>
+      <div className="MapLocation-buttons-container">
+        <button>Enter location</button>
+        <button>Fight monsters</button>
+      </div>
     </div>
   );
 };

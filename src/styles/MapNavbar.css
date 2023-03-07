@@ -1,0 +1,19 @@
+.MapNavbar-container {
+    background-color: var(--first-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 0.5rem;
+}
+.MapNavbar-container > button {
+    background-color: var(--second-color);
+    color: var(--third-color);
+    padding: 0.3rem 0.5rem;
+    font-size: 1rem;
+}
+.MapNavbar-container > button:hover {
+    cursor: pointer;
+    color: var(--fourth-color);
+    text-decoration: underline;
+}

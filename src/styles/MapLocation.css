@@ -1,0 +1,51 @@
+.MapLocation-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    width: fit-content;
+    min-width: 40%;
+    height: fit-content;
+    min-height: 5rem;
+    background-color: var(--third-color);
+    border: 1px solid var(--second-color);
+    border-radius: 0.3rem;
+    color: var(--first-color);
+}
+.MapLocation-container > p {
+    font-size: 4rem;
+    margin-top: 0.3rem;
+    margin-bottom: 0.3rem;
+}
+.MapLocation-container > img {
+    width: 70%;
+}
+.MapLocation-buttons-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding: 0.4rem;
+}
+.MapLocation-buttons-container > button {
+    background-color: var(--second-color);
+    border: 0;
+    font-size: 3rem;
+    padding: 0.7rem;
+    border: 1px solid var(--first-color);
+    border-radius: 0.3rem;
+}
+.MapLocation-buttons-container > button:hover {
+    border: 1px solid var(--fourth-color);
+    text-decoration: underline;
+    cursor: pointer;
+}   
+
+@media (max-width: 468px) {
+    .MapLocation-container {
+        width: 90%;
+    }
+    .MapLocation-container > p {
+        font-size: 3rem;
+    }
+}

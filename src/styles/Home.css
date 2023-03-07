@@ -4,6 +4,7 @@
     align-items: center;
 
     background-color: var(--first-color);
+    font-size: 4rem
 }
 .Home-navbar-buttons-container > button {
     background-color: var(--first-color);

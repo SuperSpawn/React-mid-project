@@ -2,7 +2,6 @@ import React from "react";
 
 import "../styles/reset.css";
 import "../styles/utils.css";
-import "../styles/MapCard.css";
 import "../styles/MapLocations.css";
 import MapLocation from "./MapLocation";
 
@@ -14,7 +13,7 @@ export const MapLocations = ({ locations }) => {
         return (
           <MapLocation
             key={location.id}
-            name={location.name}
+            location={location}
             locationType={locationType}
           />
         );
