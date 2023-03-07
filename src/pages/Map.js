@@ -1,21 +1,28 @@
-import React from 'react'
+import React from "react";
 
-import '../styles/reset.css'
-import '../styles/utils.css'
-import '../styles/Map/Map.css'
+import "../styles/reset.css";
+import "../styles/utils.css";
+import "../styles/Map.css";
 
-import { Loading } from '../components/generic/Loading'
+import { MapNavbar } from "../components/MapNavbar";
+import { MapLocations } from "../components/MapLocations";
+import fetchUsers from "../service/fetchUsers";
 
-import {MapNavbar} from '../components/pages/Map/MapNavbar'
-import { MapLocations } from '../components/pages/Map/MapLocations'
+import { NoPage } from "./NoPage";
 
 export const Map = () => {
   //load locations array
-  
+  const user = JSON.parse(localStorage.getItem("user"));
+
+  const users = fetchUsers();
+  if (!users) return <NoPage />;
+
+  const locations = users[0].gang;
 
   return (
-    <div className='Map-container page-height'>
-      <MapNavbar/>
+    <div className="Map-container page-height">
+      <MapNavbar />
+      <MapLocations locations={locations} />
     </div>
-  )
-}
+  );
+};
