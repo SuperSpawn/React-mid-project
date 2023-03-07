@@ -1,5 +1,5 @@
 import "./App.css";
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { Home } from "./pages/Home";
@@ -11,14 +11,16 @@ import { Store } from "./pages/Store";
 import { Combat } from "./pages/Combat";
 import { NoPage } from "./pages/NoPage";
 
-//import { Loading } from './components/generic/Loading';
+import { Loading } from "./components/Loading";
 import fetchUsers from "./service/fetchUsers";
 import fetchMonsters from "./service/fetchMonsters";
 
 function App() {
+  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
-    fetchUsers();
-    fetchMonsters();
+    fetchUsers(setLoading);
+    fetchMonsters(setLoading);
 
     const cleanup = () => {
       localStorage.removeItem("user");
@@ -31,6 +33,8 @@ function App() {
       cleanup();
     };
   }, []);
+
+  if (loading) return <Loading />;
 
   return (
     <BrowserRouter>
