@@ -11,7 +11,7 @@ import fetchUsers from "../service/fetchUsers";
 import { NoPage } from "./NoPage";
 
 export const Map = () => {
-  const user = JSON.parse(localStorage.getItem("user"));
+  //const user = JSON.parse(localStorage.getItem("user"));
 
   const users = fetchUsers();
   if (!users) return <NoPage />;
