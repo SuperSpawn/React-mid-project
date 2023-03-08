@@ -1,0 +1,21 @@
+.Navbar-container {
+    display: flex;
+    width: 100%;
+    padding: 1rem 4rem;
+    gap: 2rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: var(--first-color);
+}
+.Navbar-container > button {
+    background-color: var(--second-color);
+    color: var(--third-color);
+    font-size: 3rem;
+    padding: 0.7rem;
+}
+.Navbar-container > button:hover {
+    cursor: pointer;
+    text-decoration: underline;
+    animation: color-switch 2s linear infinite;
+}

@@ -1,4 +1,6 @@
 .MapLocations-container {
+    padding-top: 5rem;
+
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
