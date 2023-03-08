@@ -1190,6 +1190,38 @@ export function generateNames(number, prefix, middle, suffix) {
   return res;
 }
 
+export function generateMonster() {
+  const namePrefixes = ["Tu", "Za", "Qui", "Lo", "Ki", "Go", "Ko", "Hi"];
+  const nameMiddle = ["la", "wa", "es", "ki", "ko", "to"];
+  const nameSuffixes = ["", "ek", "mo", "lo", "me", "mi"];
+  const elements = ["Earth", "Water", "Wind", "Electricity", "Fire", "Magic"];
+
+  const monster = {};
+  monster.name = generateName(namePrefixes, nameMiddle, nameSuffixes, "");
+  monster.avatar =
+    "https://api.dicebear.com/5.x/pixel-art/svg?seed=" + monster.name;
+  monster.stats = [];
+  monster.stats[0] = 1 + generateRandomInt(10); //strength
+  monster.stats[1] = 1 + generateRandomInt(10); //speed
+  monster.stats[2] = 1 + generateRandomInt(10); //endurance
+  monster.stats[3] = 1 + generateRandomInt(10); //perception
+  monster.stats[4] = 1 + generateRandomInt(10); //luck
+  monster.type = elements[generateRandomInt(elements.length)];
+  monster.hp = 10 + monster.stats[0] + monster.stats[2] * 10;
+  monster.mana = monster.stats[2] + monster.stats[1] * 10;
+  monster.xp = 0;
+  monster.level = 1;
+  monster.abilities = [];
+  for (let j = 0; j < 5; ++j) {
+    const ability = {};
+    ability.name =
+      adjectives[generateRandomInt(adjectives.length)] + " " + monster.type;
+    ability.cost = j * 2;
+    ability.dmg = j * 3;
+    monster.abilities[j] = ability;
+  }
+  return monster;
+}
 /*
 
 const namePrefixes = ['Tu', "Za", "Qui", "Lo", "Ki", "Go", "Ko", "Hi"]
