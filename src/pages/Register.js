@@ -9,11 +9,14 @@ import { createUser } from "../CRUD/crud";
 import { useNavigate } from "react-router-dom";
 import fetchUsers from "../service/fetchUsers";
 
+import { generateMonster } from "../logic/logic";
+
 export const Register = () => {
   const nameRef = useRef(null);
   const emailRef = useRef(null);
   const password1Ref = useRef(null);
   const password2Ref = useRef(null);
+  const adminRef = useRef(null);
 
   const [error, setError] = useState(0);
   const navigate = useNavigate();
@@ -40,9 +43,11 @@ export const Register = () => {
       return;
     }
     data.gold = 500;
-    data.isAdmin = false;
+    data.isAdmin = adminRef.current.checked;
     data.location = "";
     data.gang = [];
+    data.gang[0] = generateMonster();
+    data.gang[1] = generateMonster();
 
     createUser(data);
     const users = fetchUsers();
@@ -66,6 +71,7 @@ export const Register = () => {
         {error === 2 && <h3>* Passwords don't match</h3>}
         <div className="Home-Login-buttons-container">
           <button onClick={registerHandler}>Register</button>
+          <input ref={adminRef} type="checkbox" />
         </div>
       </div>
     </div>

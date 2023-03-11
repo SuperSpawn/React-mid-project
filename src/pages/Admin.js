@@ -11,8 +11,13 @@ import "../styles/reset.css";
 import "../styles/utils.css";
 import "../styles/Admin.css";
 
+import { NoPage } from "./NoPage";
+
 export const Admin = () => {
   const [adminSection, setAdminSection] = useState(0);
+  const [error, setError] = useState(0);
+
+  if (error === 1) return <NoPage />;
 
   return (
     <div className="Admin-container">
@@ -22,10 +27,10 @@ export const Admin = () => {
         <button onClick={() => setAdminSection(2)}>Monsters</button>
         <button onClick={() => setAdminSection(3)}>Stats</button>
       </Navbar>
-      {adminSection === 0 && <UsersList />}
-      {adminSection === 1 && <LocationsList />}
-      {adminSection === 2 && <MonsterList />}
-      {adminSection === 3 && <StatsList />}
+      {adminSection === 0 && <UsersList setError={setError} />}
+      {adminSection === 1 && <LocationsList setError={setError} />}
+      {adminSection === 2 && <MonsterList setError={setError} />}
+      {adminSection === 3 && <StatsList setError={setError} />}
     </div>
   );
 };

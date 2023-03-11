@@ -12,12 +12,17 @@ import { NoPage } from "./NoPage";
 import { Navbar } from "../components/Navbar";
 
 export const Map = () => {
-  //const user = JSON.parse(localStorage.getItem("user"));
+  const user = JSON.parse(localStorage.getItem("user"));
   const navigate = useNavigate();
   const logoutHandler = () => {
     localStorage.removeItem("user");
     navigate("/");
   };
+  const adminHandler = () => {
+    navigate("/admin");
+  };
+
+  if (!user) return <NoPage />;
 
   const users = fetchUsers();
   if (!users) return <NoPage />;
@@ -27,6 +32,7 @@ export const Map = () => {
     <div className="Map-container page-height">
       <Navbar>
         <button onClick={logoutHandler}>logout</button>
+        {user.isAdmin && <button onClick={adminHandler}>admin</button>}
       </Navbar>
       <MapLocations locations={locations} />
     </div>

@@ -1,0 +1,6 @@
+.UsersList-container {
+    font-size: 5rem;
+    margin-top: 10rem;
+    background-color: var(--first-color);
+    width: 100%;
+}

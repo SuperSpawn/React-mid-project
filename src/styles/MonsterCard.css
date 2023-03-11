@@ -1,0 +1,16 @@
+.Monster-container {
+    background-color: var(--second-color);
+    width: 20%;
+    text-align: center;
+    padding: 1rem 0;
+    border-radius: 1rem;
+    border: 2px solid var(--third-color);
+}
+.Monster-container > h3 {
+    font-size: 6rem;
+    animation: color-switch 2s linear infinite;
+}
+.Monster-container > p {
+    font-size: 3rem;
+    color: var(--fourth-color);
+}
