@@ -1,0 +1,6 @@
+.LocationsList-container {
+    margin-top: 7.2rem;
+    gap: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+}

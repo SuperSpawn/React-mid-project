@@ -1,6 +1,18 @@
 .UsersList-container {
     font-size: 5rem;
-    margin-top: 10rem;
-    background-color: var(--first-color);
+    margin-top: 7.2rem;
     width: 100%;
+    background-color: var(--first-color);
+    color: var(--first-color);
+    
+}
+.UsersList-container > button {
+    padding: 1rem;
+    background-color: var(--fourth-color);
+    border-radius: 1rem;
+}
+.UsersList-container > button:hover {
+    cursor: pointer;
+    background-color: var(--second-color);
+    color: var(--third-color);
 }

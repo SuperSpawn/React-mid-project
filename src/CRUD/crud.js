@@ -14,7 +14,17 @@ export async function createUser(data) {
     return null;
   }
 }
-export function deleteUser(userID) {}
+export async function deleteUser(userID) {
+  try {
+    const prom = await axios.delete(
+      "https://6400744e9f8449102991251c.mockapi.io/TheLandtoTheWest/users/" +
+        userID
+    );
+    return prom;
+  } catch (e) {
+    console.error(e.message);
+  }
+}
 export async function updateUser(userID, data) {
   try {
     const prom = await axios.put(

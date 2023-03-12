@@ -1,0 +1,18 @@
+.LocationCard-container {
+    color: var(--second-color);
+    font-size: 4rem;
+}
+.LocationCard-container li {
+    color: var(--third-color);
+}
+.LocationCard-container li p {
+    font-size: 2.3rem;
+}
+.LocationCard-container li p span {
+    margin-left: 4rem;
+    font-size: 2rem;
+    color: var(--fourth-color);
+}
+.LocationCard-container .clicked {
+    color: var(--second-color);
+}

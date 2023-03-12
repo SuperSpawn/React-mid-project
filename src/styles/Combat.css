@@ -10,4 +10,20 @@
 .Combat-player-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.Combat-panel {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5rem;
+    font-size: 5rem;
+}
+.Attack-options {
+    display: flex;
+    flex-direction: column;
+}
+.Item-options {
+    display: flex;
+    flex-direction: column;
 }

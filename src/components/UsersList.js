@@ -1,24 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
 
 import "../styles/reset.css";
 import "../styles/utils.css";
 import "../styles/UsersList.css";
 
 import { UserCard } from "./UserCard";
-import uuid from "react-uuid";
+import { NoPage } from "../pages/NoPage";
 
-export const UsersList = ({ setError }) => {
-  const users = JSON.parse(localStorage.getItem("users"));
+import fetchUsers from "../service/fetchUsers";
+
+export const UsersList = () => {
+  const [refresh, setRefresh] = useState(false);
+  const users = fetchUsers(null);
   if (!users) {
-    setError(1);
-    return null;
+    return <NoPage />;
   }
 
   return (
     <table className="UsersList-container">
-      {users.map((user) => {
-        return <UserCard key={uuid()} user={user} />;
-      })}
+      <tbody>
+        {users.map((user, index) => {
+          return (
+            <UserCard
+              key={user.id}
+              user={user}
+              userIndex={index}
+              refresh={refresh}
+              setRefresh={setRefresh}
+            />
+          );
+        })}
+      </tbody>
     </table>
   );
 };

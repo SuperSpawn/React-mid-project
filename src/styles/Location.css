@@ -1,0 +1,38 @@
+.Location-container {
+    background-color: var(--first-color);
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    gap: 5rem;
+}
+
+.Location-shop-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 20rem;
+    border: 1px solid var(--fourth-color);
+    background-color: var(--second-color);
+    border-radius: 1rem;
+    padding: 1rem 0.5rem;
+    margin-top: 1rem;
+    animation: border-pulse 1s infinite alternate;
+}
+.Location-shop-container > h3 {
+    color: var(--third-color);
+    text-align: center;
+    font-size: 2rem;
+}
+.Location-shop-container > button {
+    font-size: 2rem;
+    background-color: var(--third-color);
+    padding: 0.5rem;
+    border-radius: 2rem;
+    border: 0;
+}
+.Location-shop-container > button:hover {
+    cursor: pointer;
+    background-color: var(--fourth-color);
+}

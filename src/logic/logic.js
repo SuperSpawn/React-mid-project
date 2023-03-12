@@ -1174,7 +1174,7 @@ export function generateLocation() {
   }
   return location;
 }
-function generateLocations(number) {
+export function generateLocations(number) {
   let res = [];
   for (let i = 0; i < number; ++i) {
     res.push(generateLocation());
@@ -1190,11 +1190,33 @@ export function generateNames(number, prefix, middle, suffix) {
   return res;
 }
 
+export const elements = [
+  "Earth",
+  "Water",
+  "Wind",
+  "Electricity",
+  "Fire",
+  "Magic",
+];
+export const elementOnElement = [
+  [1, 0.4, 1.2, 0.3, 0.5, 0.1],
+  [0.6, 1, 0.5, 0.1, 2, 0.1],
+  [0.7, 0.5, 1.0, 0.1, 0.1, 3.0],
+  [0.1, 2, 0.1, 1, 0.1, 0.1],
+  [0.2, 0.1, 0.8, 0.6, 1, 0.5],
+  [0.5, 0.5, 0.5, 0.5, 0.5, 1],
+];
+
+export function getElementIndex(element) {
+  for (let i in elements) {
+    if (elements[i] === element) return i;
+  }
+}
+
 export function generateMonster() {
   const namePrefixes = ["Tu", "Za", "Qui", "Lo", "Ki", "Go", "Ko", "Hi"];
   const nameMiddle = ["la", "wa", "es", "ki", "ko", "to"];
   const nameSuffixes = ["", "ek", "mo", "lo", "me", "mi"];
-  const elements = ["Earth", "Water", "Wind", "Electricity", "Fire", "Magic"];
 
   const monster = {};
   monster.name = generateName(namePrefixes, nameMiddle, nameSuffixes, "");
@@ -1222,6 +1244,24 @@ export function generateMonster() {
   }
   return monster;
 }
+
+export function calculateDamage(
+  baseDmg,
+  attackerStats,
+  defenderStats,
+  attackerType,
+  defenderType
+) {
+  return (
+    baseDmg *
+    ((attackerStats[0] + attackerStats[2]) /
+      (defenderStats[0] + defenderStats[2])) *
+    elementOnElement[getElementIndex(attackerType)][
+      getElementIndex(defenderType)
+    ]
+  );
+}
+
 /*
 
 const namePrefixes = ['Tu', "Za", "Qui", "Lo", "Ki", "Go", "Ko", "Hi"]

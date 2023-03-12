@@ -23,7 +23,7 @@ function App() {
     fetchMonsters(setLoading);
 
     const cleanup = () => {
-      localStorage.removeItem("user");
+      //localStorage.removeItem("user");
       localStorage.removeItem("users");
       localStorage.removeItem("monsters");
     };
